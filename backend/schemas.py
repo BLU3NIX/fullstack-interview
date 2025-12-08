@@ -3,9 +3,7 @@ from typing import Optional, List
 
 
 class Todo(BaseModel):
-    name: Optional[str] = None
-    order: Optional[int] = None
-    completed: Optional[bool] = None
+    pass
 
 
 class TodoCreate(Todo):
@@ -17,31 +15,16 @@ class TodoUpdate(Todo):
 
 
 class TodoResponse(BaseModel):
-    id: int
-    name: str
-    order: int
-    completed: bool
-
-    class Config:
-        from_attributes = True
+    pass
 
 
 class TodoCreateResponse(BaseModel):
-    success: bool
-    created_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
-    error: Optional[str] = None
+    pass
 
 
 class TodoUpdateResponse(BaseModel):
-    success: bool
-    updated_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
-    error: Optional[str] = None
+    pass
 
 
 class TodoDeleteResponse(BaseModel):
-    success: bool
-    deleted_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
-    error: Optional[str] = None
+    pass
