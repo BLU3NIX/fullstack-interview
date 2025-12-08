@@ -32,3 +32,10 @@ Content-Type: application/json
 ### Delete a todo
 DELETE http://localhost:8000/todos/delete/1
 X-API-Key: test-api-key
+
+
+# curl -X POST http://localhost:8000/todos/create \
+#    -H "X-API-Key: test-api-key" \
+#    -H "Content-Type: application/json" \
+#    -d '{"name": "Buy groceries", "order": 1, "completed":
+#  false}'
