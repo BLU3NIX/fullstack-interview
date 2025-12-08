@@ -146,3 +146,4 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 - Jedes Item soll abhakbar und löschbar sein
 - Hinzufügen von Items über Text-Input + Button
  
+<img width="1898" height="658" alt="image" src="https://github.com/user-attachments/assets/4a9cd88f-b877-42f6-a981-ef4053ebb420" />
