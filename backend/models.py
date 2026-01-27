@@ -3,4 +3,15 @@ from database import Base
 
 
 class Todo(Base):
-    pass
+    __tablename__ = "todos"
+    __table_args__ = (
+        PrimaryKeyConstraint(
+            "id",
+        ),
+    )
+    id = Column(
+        Integer(), primary_key=True, autoincrement=True, index=True, nullable=False
+    )
+    name = Column(String(), nullable=False, default="")
+    order = Column(Integer(), nullable=False, unique=True)
+    completed = Column(Boolean(), nullable=False, default=False)
