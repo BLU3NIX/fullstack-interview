@@ -123,27 +123,26 @@ X-API-Key: your-api-key
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 # Todo Frontend
-
-First, run the development server:
+First instal the relevant packages using:
+```bash
+npm install
+```
+Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as yo edit the file.
 
-- Verwendung der bereitgestellten Endpunkte zum fetchen, erstellen, bearbeiten und löschen von Todo-Items
-- Aktuell gefetchte Items sollen in State gehalten werden
-- Darstellung der Todo-Items als Liste
-- Jedes Item soll abhakbar und löschbar sein
-- Hinzufügen von Items über Text-Input + Button
+The application should do the following:
+- Use the provided endpoints to fetch, create, edit, and delete todo items
+- Currently fetched items should be stored in state
+- Display the todo items as a list
+- Each item should be checkable and deletable
+- Add items via a text input + button
+- Include an "Edit" Button for updating todos
  
 <img width="1898" height="658" alt="image" src="https://github.com/user-attachments/assets/4a9cd88f-b877-42f6-a981-ef4053ebb420" />
