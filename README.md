@@ -123,7 +123,7 @@ X-API-Key: your-api-key
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 # Todo Frontend
-First instal the relevant packages using:
+First install the relevant packages using:
 ```bash
 npm install
 ```
