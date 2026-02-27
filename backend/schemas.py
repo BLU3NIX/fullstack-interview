@@ -29,19 +29,16 @@ class TodoResponse(BaseModel):
 class TodoCreateResponse(BaseModel):
     success: bool
     created_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
     error: Optional[str] = None
 
 
 class TodoUpdateResponse(BaseModel):
     success: bool
     updated_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
     error: Optional[str] = None
 
 
 class TodoDeleteResponse(BaseModel):
     success: bool
     deleted_todo: Optional[TodoResponse] = None
-    todos: List[TodoResponse] = []
     error: Optional[str] = None

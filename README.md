@@ -66,7 +66,13 @@ All endpoints require the `X-API-Key` header for authentication.
 ```http
 GET /todos/read
 X-API-Key: your-api-key
+
 ```
+
+```
+curl -X POST http://localhost:8000/todos/read
+```
+
 
 ### Create a todo
 ```http
