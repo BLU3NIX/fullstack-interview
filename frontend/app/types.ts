@@ -5,20 +5,20 @@ export type TodoItem = {
     completed: boolean;
 }
 
-export type CreateTodoResponse = {
-    successful: boolean;
-    createdTodo: TodoItem;
-    error: string;
-}
+// export type CreateTodoResponse = {
+//     successful: boolean;
+//     createdTodo: TodoItem;
+//     error: string;
+// }
 
-export type ToggleTodoResponse = {
-    successful: boolean;
-    updatedTodo: TodoItem;
-    error: string;
-}
+// export type ToggleTodoResponse = {
+//     successful: boolean;
+//     updatedTodo: TodoItem;
+//     error: string;
+// }
 
-export type DeleteTodoResponse = {
-    successful: boolean;
-    deletedTodo: TodoItem;
-    error: string;
-}
+// export type DeleteTodoResponse = {
+//     successful: boolean;
+//     deletedTodo: TodoItem;
+//     error: string;
+// }

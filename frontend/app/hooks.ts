@@ -29,17 +29,17 @@ export const handleTodoItems = () => {
 
     // TODOS
     const fetchItems = async () => {
-        // try {
-        //     const results = await fetch(`${BACKEND_URL}/todos/read`, {
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //     })
-        //     const data = await results.json()
-        //     setItems(data)
-        // } catch (error) {
-        //     console.error("Error fetching ToDo items:", error)
-        // }
+        try {
+            const results = await fetch(`${BACKEND_URL}/todos/read`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            const data = await results.json()
+            setItems(data)
+        } catch (error) {
+            console.error("Error fetching ToDo items:", error)
+        }
     }
 
 
@@ -81,22 +81,22 @@ export const handleTodoItems = () => {
     }
 
 
-    const toggleItem = async (id: number) => {
-        // const item = items.find(i => i.id === id)
-        // if (!item) return
-        // try {
-        //     await fetch(`${BACKEND_URL}/todos/update/${id}`, {
-        //         method: "PATCH",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify({ completed: !item.completed }),
-        //     })
-        //     await fetchItems()
-        // } catch (error) {
-        //     console.error("Error editing ToDo item:", error)
-        // }
-    }
+    // const toggleItem = async (id: number) => {
+    //     // const item = items.find(i => i.id === id)
+    //     // if (!item) return
+    //     // try {
+    //     //     await fetch(`${BACKEND_URL}/todos/update/${id}`, {
+    //     //         method: "PATCH",
+    //     //         headers: {
+    //     //             "Content-Type": "application/json",
+    //     //         },
+    //     //         body: JSON.stringify({ completed: !item.completed }),
+    //     //     })
+    //     //     await fetchItems()
+    //     // } catch (error) {
+    //     //     console.error("Error editing ToDo item:", error)
+    //     // }
+    // }
 
     return {
         // items,
