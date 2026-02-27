@@ -16,15 +16,12 @@ A RESTful API for managing todos built with FastAPI, SQLAlchemy, and SQLite.
 ```
 backend/
 ├── main.py          # FastAPI app initialization and middleware
-├── config.py        # Environment configuration
 ├── database.py      # Database connection and session
 ├── models.py        # SQLAlchemy models
 ├── schemas.py       # Pydantic schemas for request/response
 ├── todos.py         # Todo endpoints router
-├── auth.py          # API key authentication
 ├── requirements.txt # Python dependencies
 ├── request.http     # Example HTTP requests
-└── session.sql      # SQL queries reference
 ```
 
 ## Setup
@@ -66,18 +63,15 @@ All endpoints require the `X-API-Key` header for authentication.
 ```http
 GET /todos/read
 X-API-Key: your-api-key
-
 ```
 
 ```
-curl -X POST http://localhost:8000/todos/read
+curl -X GET http://localhost:8000/todos/read
 ```
-
 
 ### Create a todo
 ```http
 POST /todos/create
-X-API-Key: your-api-key
 Content-Type: application/json
 
 {
@@ -90,7 +84,6 @@ Content-Type: application/json
 ### Update a todo
 ```http
 PATCH /todos/update/1
-X-API-Key: your-api-key
 Content-Type: application/json
 
 {
@@ -101,7 +94,6 @@ Content-Type: application/json
 ### Delete a todo
 ```http
 DELETE /todos/delete/1
-X-API-Key: your-api-key
 ```
 
 ## Response Format
@@ -111,7 +103,6 @@ X-API-Key: your-api-key
 {
     "success": true,
     "created_todo": { "id": 1, "name": "...", "order": 1, "completed": false },
-    "todos": [...],
     "error": null
 }
 ```
@@ -121,17 +112,19 @@ X-API-Key: your-api-key
 {
     "success": false,
     "created_todo": null,
-    "todos": [...],
     "error": "Error message"
 }
 ```
 
+# Todo Frontend
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Todo Frontend
 First install the relevant packages using:
 ```bash
 npm install
+or
+pnpm install
 ```
 Then run the development server:
 
@@ -141,7 +134,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as yo edit the file.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 The application should do the following:
 - Use the provided endpoints to fetch, create, edit, and delete todo items
