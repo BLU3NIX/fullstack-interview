@@ -6,22 +6,22 @@ import Item from "./todo-item";
 
 export default function Home() {
 
-  // const { items, fetchItems, addItem, deleteItem, toggleItem } = handleTodoItems();
-  // const [name, setName] = useState("");
+  const { items, fetchItems, addItem, deleteItem, toggleItem } = handleTodoItems();
+  const [name, setName] = useState("");
 
-  // useEffect(() => {
-  //   fetchItems();
-  // }, [])
+  useEffect(() => {
+    fetchItems();
+  }, [])
 
-  // const addTodo = () => {
-  //   if (name.trim() === "") return;
-  //   addItem(name.trim());
-  //   setName("");
-  // }
+  const addTodo = () => {
+    if (name.trim() === "") return;
+    addItem(name.trim());
+    setName("");
+  }
 
   return (
     <main>
-      {/*<h1>Todo Items</h1>
+      <h1>Todo Items</h1>
       <div className="create-container">
         <input placeholder="What's your next plan?" value={name} onChange={(e) => setName(e.target.value)}/>
         <button onClick={() => addTodo()}>Add Todo</button>
@@ -35,7 +35,7 @@ export default function Home() {
             toggleItem={toggleItem}
           />
         ))}
-      </div>*/}
+      </div>
     </main>
   );
 }

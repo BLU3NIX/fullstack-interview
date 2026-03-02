@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional
 
 
 class Todo(BaseModel):
@@ -27,19 +27,19 @@ class TodoResponse(BaseModel):
         from_attributes = True
 
 
-# class TodoCreateResponse(BaseModel):
-#     success: bool
-#     created_todo: Optional[TodoResponse] = None
-#     error: Optional[str] = None
+class TodoCreateResponse(BaseModel):
+    success: bool
+    created_todo: Optional[TodoResponse] = None
+    error: Optional[str] = None
 
 
-# class TodoUpdateResponse(BaseModel):
-#     success: bool
-#     updated_todo: Optional[TodoResponse] = None
-#     error: Optional[str] = None
+class TodoUpdateResponse(BaseModel):
+    success: bool
+    updated_todo: Optional[TodoResponse] = None
+    error: Optional[str] = None
 
 
-# class TodoDeleteResponse(BaseModel):
-#     success: bool
-#     deleted_todo: Optional[TodoResponse] = None
-#     error: Optional[str] = None
+class TodoDeleteResponse(BaseModel):
+    success: bool
+    deleted_todo: Optional[TodoResponse] = None
+    error: Optional[str] = None

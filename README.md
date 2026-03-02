@@ -11,13 +11,14 @@
 
 ```
 backend/
-├── main.py          # FastAPI app initialization and middleware
-├── database.py      # Database connection and session
-├── models.py        # SQLAlchemy models
-├── schemas.py       # Pydantic schemas for request/response
-├── todos.py         # Todo endpoints router
+├── main.py          # FastAPI app entry point, CORS middleware setup
+├── database.py      # SQLAlchemy engine, session factory, and DB dependency
+├── models.py        # SQLAlchemy ORM model (Todo table)
+├── schemas.py       # Pydantic schemas for request/response validation
+├── todos.py         # Todo CRUD endpoint router (/todos/*)
 ├── requirements.txt # Python dependencies
-├── request.http     # Example HTTP requests
+├── sqlite.db        # SQLite database file (auto-generated)
+└── venv/            # Python virtual environment (not committed)
 ```
 
 ## Setup
@@ -56,15 +57,35 @@ The API will be available at `http://localhost:8000`
 
 ## Tech Stack
 
-- **NextJS** - 
-- **TypeScript** - 
-- **SCSS** -
+- **Next.js** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **SCSS** - CSS preprocessor for styling
+
+## Project Structure
+
+```
+frontend/
+├── app/
+│   ├── page.tsx         # Main page component (todo list UI)
+│   ├── layout.tsx       # Root layout with metadata and fonts
+│   ├── hooks.ts         # Custom hook for todo CRUD operations
+│   ├── todo-item.tsx    # Individual todo item component
+│   ├── types.ts         # TypeScript type definitions
+│   ├── styles.scss      # SCSS styles for the todo app
+│   ├── globals.css      # Global CSS (Tailwind base styles)
+│   └── favicon.ico      # App favicon
+├── eslint.config.mjs    # ESLint configuration
+├── next.config.ts       # Next.js configuration
+├── postcss.config.mjs   # PostCSS configuration
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Dependencies and scripts
+```
+
+## Setup
 
 First install the relevant packages using:
 ```bash
 npm install
-or
-pnpm install
 ```
 Then run the development server:
 
@@ -78,10 +99,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The application should do the following:
 - Use the provided endpoints to fetch, create, edit, and delete todo items
-- Currently fetched items should be stored in state
 - Display the todo items as a list
-- Each item should be checkable and deletable
+- Fetched items should be stored in state
 - Add items via a text input + button
-- Include an "Edit" Button for updating todos
+- Each item should be checkable and deletable
  
 <img width="1898" height="658" alt="image" src="https://github.com/user-attachments/assets/4a9cd88f-b877-42f6-a981-ef4053ebb420" />
