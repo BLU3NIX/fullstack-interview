@@ -1,7 +1,6 @@
 from fastapi import (
     APIRouter,
     Depends,
-    Request,
 )
 
 from sqlalchemy.orm import Session
@@ -32,32 +31,29 @@ async def read_todos(
     return todos
 
 
-@router.post("/create", response_model=TodoCreateResponse)
+@router.post("/create")
 async def create_todo(
     todo: TodoCreate,
     db: Session = Depends(get_db),
 ):
     """Create a new todo item."""
-
     return
 
 
-@router.patch("/update/{todo_id}", response_model=TodoUpdateResponse)
+@router.patch("/update/{todo_id}")
 async def update_todo(
     todo_id: int,
     todo: TodoUpdate,
     db: Session = Depends(get_db),
 ):
     """Update an existing todo item."""
-
     return
 
 
-@router.delete("/delete/{todo_id}", response_model=TodoDeleteResponse)
+@router.delete("/delete/{todo_id}")
 async def delete_todo(
     todo_id: int,
     db: Session = Depends(get_db),
 ):
     """Delete a todo item."""
-
     return

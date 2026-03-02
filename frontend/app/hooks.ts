@@ -29,7 +29,17 @@ export const handleTodoItems = () => {
 
     // TODOS
     const fetchItems = async () => {
-
+        try {
+            const results = await fetch(`${BACKEND_URL}/todos/read`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            const data = await results.json()
+            setItems(data)
+        } catch (error) {
+            console.error("Error fetching ToDo items:", error)
+        }
     }
 
     const addItem = async (name: string) => {
@@ -45,6 +55,10 @@ export const handleTodoItems = () => {
     }
 
     return {
-
+        items,
+        fetchItems,
+        addItem,
+        deleteItem,
+        toggleItem
     }
 }

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional
 
 
 class Todo(BaseModel):
@@ -8,8 +8,9 @@ class Todo(BaseModel):
     completed: Optional[bool] = None
 
 
-class TodoCreate(Todo):
-    pass
+class TodoCreate(BaseModel):
+    name: str
+    completed: bool
 
 
 class TodoUpdate(Todo):
