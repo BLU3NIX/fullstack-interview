@@ -44,6 +44,21 @@ export const handleTodoItems = () => {
 
     const addItem = async (name: string) => {
 
+        const response = await fetch(`${BACKEND_URL}/todos/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, completed: false })
+        })
+        
+        const data = await response.json() as CreateTodoResponse
+
+        if (!response.ok) {
+            console.error("Todo konnte nicht erstellt werden", data)
+            return
+        }
+        setItems((prev) => [...prev, data.created_todo as TodoItem])
     }
 
     const deleteItem = async (id: number) => {
