@@ -7,7 +7,7 @@ export type TodoItem = {
 
 export type CreateTodoResponse = {
     successful: boolean;
-    createdTodo: TodoItem;
+    created_todo: TodoItem;
     error: string;
 }
 
